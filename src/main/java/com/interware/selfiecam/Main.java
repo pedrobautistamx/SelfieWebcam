@@ -19,7 +19,10 @@ public class Main {
  
         //pruebaaa
         //prueba 2
+<<<<<<< HEAD
         
+=======
+>>>>>>> ae3a254aa2f5831c164239a93c9b79ac36e1536e
         
     
     
