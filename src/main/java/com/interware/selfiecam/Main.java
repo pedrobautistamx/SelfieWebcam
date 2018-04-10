@@ -17,6 +17,7 @@ public class Main {
         miVentana.setLocationRelativeTo(null);
         miVentana.setVisible(true);
  
+        //pruebaaa
         
     
     
