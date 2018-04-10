@@ -9,44 +9,22 @@ import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamResolution;
 import java.nio.file.Paths;
 
-/**
- * Hello world!
- *
- */
+
 public class App {
 
-    public static void main(String[] args) {
+    String ruta_recibida;
 
-        String[] webcam_names;
-        int count = 0;
-        webcam_names = new String[10];
+    public void takePhoto(String ruta_recibida, String webcam_name) {
+
         String ruta;
-        String ruta_default = Paths.get(System.getProperty("user.home")).toAbsolutePath().toString() + "/selfiewebcam.png";
-
-        //Webcam webcam = Webcam.getDefault();
+        
+        ruta = ruta_recibida;
+        //Webcam webcam =   Webcam.getDefault();
         ///String name_file = "/selfiewebcam.png";
-        if (args.length > 0) { //si hay más de 1 parámetro
-            // System.out.println("Hay demasiados parámetros. Especificar ruta para guardar.");
-            ruta = args[0];
 
-        } //else if (args.length == 0) { //si no hay parámetros      
-        //System.out.println("Especifique ruta para guardar");
-        //}
-        else {
+        Webcam webcam = Webcam.getWebcamByName(webcam_name);
 
-            ruta = ruta_default;
-            //System.out.println("RUTA:"+ruta);
-        }
-
-        for (Webcam webcam : Webcam.getWebcams()) {
-            System.out.println("Webcam detected: " + webcam.getName());
-            webcam_names[count] = webcam.getName();
-            count++;
-        }
-
-        Webcam webcam = Webcam.getWebcamByName(webcam_names[1]);
         //Webcam webcam = Webcam.getDefault();
-
         try {
             webcam.setCustomViewSizes(new Dimension[]{WebcamResolution.FHD.getSize()});
             webcam.setViewSize(WebcamResolution.FHD.getSize());
@@ -78,7 +56,6 @@ public class App {
             webcam.close();
             //  System.exit(0);
         }
-
     }
 
 }
