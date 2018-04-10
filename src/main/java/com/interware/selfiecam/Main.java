@@ -18,6 +18,7 @@ public class Main {
         miVentana.setVisible(true);
  
         //pruebaaa
+        //prueba 2
         
         
     
